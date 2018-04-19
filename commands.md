@@ -4,6 +4,10 @@ Commands
 
 "Youmf" follows a unix-like command system. I've made some minor changes to make it easier on me and the client, but you can expect almost everything to be the same, sans some flags and arguments.
 
+The end goal (hopefully) is to have each command be written using VS and be stored in the /drive/bin/ folder, rather than using pure JS to work with information.
+
+I'd like to add that the only command that will not be written in VS is `signup`, and that's for obvious interception and encryption reasons.
+
 Filesystem
 ==========
 
@@ -132,14 +136,53 @@ Park@147.252.27.79:/drive/home/$ ping 69.146.24.180
 Park@147.252.27.79:/drive/home/$
 ```
 
+req target:port
+---------------
+This is a possible feature. Send a request to a computer on the given port. The request will ask for the information from their `robots` file (stored in /drive/sys/), and send it back to the user.
 
+If no port is specified, then HTTP (80) will be used.
 
+The port must be open on the target computer to fetch the file.
 
+| Arguments |                               |
+|:---------:|:-----------------------------:|
+| target    | request target, `target:port` |
 
+The following code requests `robots` from `69.146.24.180` on port 216, and returns it to the user.
+```
+Park@147.252.27.79:/drive/$ req 69.146.24.180:80
 
+Hello! I'm unhackable. You might know me as... unhackable! ahahahaha You can't hack me. Cya.
+Park@147.252.27.79:/drive/% 
+```
 
+open port
+---------
+This is a possible feature. Opens port `port` on the user's computer to everyone.
 
+I plan to add a `permitted` file in /drive/sys/, which specifies which hosts are allowed to connect on what ports.
+Here's what it would look like:
+```
+# /drive/sys/permitted
+# ip:port
+# Adding an IP and a port to this list means that that IP will be able to connect to your machine using that port.
 
+25.62.135.125:216
+15.153.25.195:80
+159.122.85.210:80
+117.91.159.28:443
+```
+
+| Arguments |                                |
+|:---------:|:------------------------------:|
+| port      | port number to open. (1-65535) |
+
+The below code opens port 80 on Park's computer, meaning anyone can connect and view `robots`.
+
+```
+Park@147.252.27.79:/drive/$ open 80
+Park@147.252.27.79:/drive/$
+```
 
 
 
