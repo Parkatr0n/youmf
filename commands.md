@@ -77,3 +77,35 @@ Park@147.252.27.79:/drive/home/$
 mkdir <directory>
 --
 Create a directory with the specified name.
+
+| Arguments |                             |
+|:---------:|:---------------------------:|
+| directory | name of directory to create |
+
+```
+Park@147.252.27.79:/drive/home/$ mkdir Homework
+Park@147.252.27.79:/drive/home/$
+```
+
+Networking
+==========
+
+ssh <target>
+--------
+Secure shell. Opens a terminal on the specified computer with root access to the filesystem.
+
+The target is <user>@<ip>. The user must be the correct user assigned to that IP address.
+
+| Arguments |                       |
+|:---------:|:---------------------:|
+| target    | ssh target. $user@$ip |
+
+```
+Park@147.252.27.79:/drive/home/$ ssh unhackable@69.146.24.180
+unhackable@69.149.24.180's password: 
+Unhackable's PC. I'm sorry if I hacked your machine it's just a gmae plz dont do anything 
+unhackable@69.149.24.180:/drive/$ rm -r /drive/
+```
+
+
+
