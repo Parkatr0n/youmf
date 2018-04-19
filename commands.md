@@ -7,7 +7,7 @@ Commands
 Filesystem
 ==========
 
-cd <directory>
+cd directory
 --
 Change working directory (wdir) to the directory asked by the client.
 
@@ -34,7 +34,7 @@ sys
 Park@147.252.27.79:/drive/$ 
 ```
 
-rm <file>
+rm file
 --
 Delete the specified file. This cannot be undone.
 
@@ -48,7 +48,7 @@ Park@147.252.27.79:/drive/home/$ rm test.vs
 Park@147.252.27.79:/drive/home/$ 
 ```
 
-rmdir <directory>
+rmdir directory
 --
 Delete the specified directory, and everything inside of it. This cannot be undone.
 
@@ -61,7 +61,7 @@ Park@147.252.27.79:/drive/home/$ rmdir HorsePorn
 Park@147.252.27.79:/drive/home/$ 
 ```
 
-mk <file>
+mk file
 --
 Create an empty file with the specified name.
 
@@ -74,7 +74,7 @@ Park@147.252.27.79:/drive/home/$ mk test.vs
 Park@147.252.27.79:/drive/home/$ 
 ```
 
-mkdir <directory>
+mkdir directory
 --
 Create a directory with the specified name.
 
@@ -90,15 +90,15 @@ Park@147.252.27.79:/drive/home/$
 Networking
 ==========
 
-ssh <target>
+ssh target
 --------
 Secure shell. Opens a terminal on the specified computer with root access to the filesystem.
 
-The target is <user>@<ip>. The user must be the correct user assigned to that IP address.
+The target is `user@ip`. The `user` must be the correct username assigned to that IP address.
 
-| Arguments |                       |
-|:---------:|:---------------------:|
-| target    | ssh target. $user@$ip |
+| Arguments |                           |
+|:---------:|:-------------------------:|
+| target    | ssh target. `username@ip` |
 
 ```
 Park@147.252.27.79:/drive/home/$ ssh unhackable@69.146.24.180
