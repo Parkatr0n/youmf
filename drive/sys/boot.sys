@@ -1,0 +1,47 @@
+; /drive/sys/boot.sys
+; This is the bootloader for your operating system.
+; Do not tamper with this file.
+; Copyright (C) Park 2018
+
+db USN Park
+db ID  e21cf288-7ac5-4fae-9906-3429ea667f3d
+db IP  193.72.15.221
+
+; double checking to make sure user isn't breaking shit on the backend
+
+
+;; check data ;;
+; use scall here to get user information from the computer and check it
+scl usn SYCA_USN ; syscall username
+scl id  SYCA_UID ; syscall userid
+scl ip  SYCA_HSN ; syscall hostname (ip)
+
+; check user
+load 0 usn
+load 1 USN
+cmp neq j1
+	; user is not correct
+	; halt program and return an error
+	return 1 "incorrect user"
+.j1
+
+; check id
+load 0 id
+load 1 ID
+cmp neq j2
+	; id is not correct
+	return 1 "incorrect id"
+.j2
+
+; check ip
+load 0 ip
+load 1 IP
+cmp neq j3
+	; ip is not correct
+	return 1 "incorrect ip"
+.j3
+
+;; boot ;;
+; there isn't any REAL bootloader code, because most of the kernel is written in JS.
+; the "boot" here is just letting the bootloader not return any errors.
+
