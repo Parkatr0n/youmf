@@ -80,9 +80,9 @@ Here is the following list of acceptable syscalls as of right now:
 | Syscall | Get? | Set? | Description               |
 |:-------:|:----:|:----:|:-------------------------:|
 | wdir    | Yes  | Yes  | Current working directory |
-| usn     | Yes  | No   | Current user              |
-| id      | Yes  | No   | Current users' id         |
-| ip      | Yes  | No   | Current user's ip         |
+| usn     | Yes  |      | Current user              |
+| id      | Yes  |      | Current users' id         |
+| ip      | Yes  |      | Current user's ip         |
 
 
 
