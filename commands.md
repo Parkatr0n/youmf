@@ -153,7 +153,7 @@ The following code requests `robots` from `69.146.24.180` on port 216, and retur
 Park@147.252.27.79:/drive/$ req 69.146.24.180:80
 
 Hello! I'm unhackable. You might know me as... unhackable! ahahahaha You can't hack me. Cya.
-Park@147.252.27.79:/drive/% 
+Park@147.252.27.79:/drive/$ 
 ```
 
 open port
