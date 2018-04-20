@@ -76,6 +76,7 @@ sys("set", "wdir", %1)
 The code `set`s the value of `wdir` (working directory) to the first argument passed.
 
 Here is the following list of acceptable syscalls as of right now:
+
 | Syscall | Get? | Set? | Description               |
 |:-------:|:----:|:----:|:-------------------------:|
 | wdir    | Yes  | Yes  | Current working directory |
